@@ -26,9 +26,9 @@ func main() {
 		}
 
 		if direction == Right {
-			password2 += countZeroes(pos+amt, pos+1)
+			password2 += countZeroes(pos+amt, pos)
 		} else {
-			password2 += countZeroes(pos-1, pos-amt)
+			password2 += countZeroes(pos-1, pos-amt-1)
 		}
 
 		pos += direction * amt
@@ -56,5 +56,5 @@ func countZeroes(hi, lo int) int {
 	if lo > hi {
 		return 0
 	}
-	return utils.FloorDiv(hi, 100) - utils.FloorDiv(lo-1, 100)
+	return utils.FloorDiv(hi, 100) - utils.FloorDiv(lo, 100)
 }
